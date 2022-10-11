@@ -5,7 +5,6 @@
 - [Overview](#overview)
 - [Setup](#setup)
 - [Usage](#usage)
-- [Support These Projects](#support-these-projects)
 
 ## Overview
 
