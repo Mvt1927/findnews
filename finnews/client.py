@@ -8,11 +8,8 @@ from finnews.nasdaq import NASDAQ
 from finnews.market_watch import MarketWatch
 from finnews.sp_global import SPGlobal
 from finnews.seeking_alpha import SeekingAlpha
-from finnews.cnn_finance import CNNFinance
 from finnews.wsj import WallStreetJournal
 from finnews.yahoo_finance import YahooFinance
-from findnewsplus.ft import FT
-from findnewsplus.bloomberg import Bloomberg
 from findnewsplus.ggnews import GGNews
 
 
@@ -41,9 +38,9 @@ class News():
         self._market_watch_client = None
         self._sp_global_client = None
         self._seeking_alpha_client = None
-        self._cnn_finance_client = None
         self._wsj_client = None
         self._yahoo_finance_client = None
+        self._google_news_client = None
 
     def __repr__(self) -> str:
         """Represents the string representation of the client object.
@@ -220,21 +217,12 @@ class News():
 
         self._yahoo_finance_client = YahooFinance()
 
-        return self._yahoo_finance_client
-    @property
-    def ft(self):
-        self._ft_client = FT()
-        return self._ft_client
-    
-    @property
-    def bloomberg(self):
-        self._bloomberg_client = Bloomberg()
-        return self._bloomberg_client
+        return self._yahoo_finance_client    
     
     @property
     def ggnews(self):
-        self._ggnews_client = GGNews()
-        return self._ggnews_client
+        self._google_news_client = GGNews()
+        return self._google_news_client
     
     def save_to_file(self, content: List[Dict], file_name: str) -> None:
         """Saves the news content to a JSONC file.

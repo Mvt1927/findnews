@@ -74,16 +74,6 @@ market_watch_rss_feeds_id = {
     'auto_reviews': 'autoreviews'
 }
 
-ft_rss_id = {
-    'home' :'',
-    'world' : 'world',
-    'companies' :'companies',
-    'technology' :'technology',
-    'markets' : 'markets',
-    'climate_capital' : 'climate-capital',
-    'news_feed': 'news-feed'
-}
-
 googleNews_rss_time_id ={
     '':'',
     '1h' : '1h',

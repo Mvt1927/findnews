@@ -83,17 +83,8 @@ class market_watch(Enum):
 
     TOP_STORIES = 'topstories'
     REAL_TIME_HEADLINES = 'realtimeheadlines'
-class ft(Enum):
-    NEWS_FEED = 'news-feed'
-    HOME =''
-    WORLD = 'world'
-    COMPANIES ='companies'
-    TECHNOLOGY ='technology'
-    MARKETS = 'markets'
-    CLIMATE_CAPITAL = 'climate-capital'
 class ggNews(Enum): 
     NULL = ''
     H = '1h'
     D = '1d'
-    REUTERS='reuters.com'
     US = 'US:en'
