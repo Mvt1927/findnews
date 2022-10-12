@@ -21,8 +21,8 @@ class GGNews():
 
     def __repr__(self):
         
-        return "<Financial Times Connected: True'>"
-    
+        return "<Google news Connected: True'>"
+    #Kiểm tra giá trị nhập vào có trong fields.py hay không
     def _check(self, time_id: str,url_id: str,local_id: str):
         if time_id in self.time_categories:
             if url_id in self.url_categories:
@@ -39,14 +39,14 @@ class GGNews():
                 raise KeyError("The value you're searching for does not exist.")
         else:
             raise KeyError("The value you're searching for does not exist.")
-
+    # lấy tất cả news 
     def news(self):
         print(self._check('','',''))
         data = self.news_parser._make_request(
             url=self._check('','','')
         )
         return data
-    
+    # lấy news trong những trang định sẵn
     def getnews(self, time: Union[str, Enum],url: Union[str, Enum],local: Union[str, Enum]):
 
         if isinstance(time, Enum):
@@ -59,19 +59,19 @@ class GGNews():
         data = self.news_parser._make_request(
             url=self._check(time,url,local)
         )
-
         return data
-    def headlines(self, symbols: List[str]):
-        params = {
-            's': ','.join(symbols),
-            'region': 'US',
-            'lang': 'en-US'
-        }
-        self.url = self._check_time(id='')
-        self.url = self._check_url(id='')
-        self.url = self._check_local(id='')
-        data = self.news_parser._make_request(
-            url=self.url,
-            params=params
-        )
-        return data
+    # lấy news bằng url không an toàn 
+    # Có thể gây ra lỗi
+    def getnewsinsecure(self,time:str, url:str,local: str):
+        try:
+            data = self.news_parser._make_request(
+                url=self.url.format(
+                    time_id=time,
+                    url_id=url,
+                    local_id=local
+                )
+            )
+            return data
+        except:
+            return False
+        
