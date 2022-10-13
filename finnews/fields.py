@@ -90,12 +90,17 @@ googleNews_rss_url_id ={
     'bloomberg.com' : 'bloomberg.com',
     'thestreet.com' : 'thestreet.com',
     'moneymorning.com': 'moneymorning.com',
-    'business-standard.com':'business-standard.com.'
+    'business-standard.com':'business-standard.com.',
     
+    
+    
+    
+    'https://vtc.vn/':'https://vtc.vn/'
 }
 
 googleNews_rss_local_id ={
     '':'',
-    'US:en':'US:en'
+    'US:en':'US:en',
+    'VN:vi':'VN:vi'
 }
 
